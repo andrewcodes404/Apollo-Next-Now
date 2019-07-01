@@ -120,7 +120,7 @@ module.exports = {
 or you will prob want to use some css somewhere so…
 
 ```jsx
-npm i npm i @zeit/next-css
+npm i @zeit/next-css
 ```
 
 ```jsx
@@ -237,7 +237,7 @@ import ApolloClient from 'apollo-boost';
 // where is the Yoga API - don't put anything in here that shouldn't be public!
 const devPrismaEndpoint = `http://localhost:4000`;
 
-                                👇 👇 👇  HERE  👇 👇 👇 
+                                👇 👇 👇 Change  this  HERE  👇 👇 👇 
 const prodPrismaEndpoint = `https://graphql-blog-back-yoga-prod.andrewcodes404.now.sh/`;
 
 function createClient({ headers }) {
@@ -371,6 +371,7 @@ const QUERY_ALL_USERS = gql`
   query QUERY_ALL_USERS {
     users {
       name
+      id
     }
   }
 `;
@@ -413,3 +414,8 @@ Everything good? let’s deploy it to now
 $ now
 ```
 
+All running smoothly apart from a browser console error
+
+GET <http://localhost:3000/favicon.ico> 404 (Not Found)
+
+just putting a fav in the root dir won’t work, you must acivate next.js \<head\> options and manually add what fav you want there
